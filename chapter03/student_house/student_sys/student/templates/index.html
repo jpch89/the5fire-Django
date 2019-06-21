@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学员管理系统</title>
+</head>
+<body>
+    <h3><a href="/admin/">后台管理</a></h3>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} - {{ student.get_status_display }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
