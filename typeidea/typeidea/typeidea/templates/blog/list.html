@@ -5,6 +5,13 @@
     <title>博客系统</title>
 </head>
 <body>
+    <div>
+        顶部分类：
+        {% for cat in navs %}
+            <a href="/category/{{ cat.id }}">{{ cat.name }}</a>
+        {% endfor %}
+    </div>
+    <hr>
     {% if tag %}
         标签页：{{ tag.name }}
     {% endif %}
@@ -25,5 +32,13 @@
             </li>
         {% endfor %}
     </ul>
+
+    <hr>
+    <div>
+        底部分类：
+        {% for cat in categories %}
+            <a href="/category/{{ cat.id }}/">{{ cat.name }}</a>
+        {% endfor %}
+    </div>
 </body>
 </html>
