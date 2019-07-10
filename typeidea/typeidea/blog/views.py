@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import Post, Tag, Category
-from config import SideBar
+from config.models import SideBar
 
 
 def post_list(request, category_id=None, tag_id=None):
